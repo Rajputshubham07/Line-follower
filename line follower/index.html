@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Follower Robot - Shubham Singh (BBDNIIT)</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0d1117;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #0b1522;
+            color: #00eaff;
+            font-size: 36px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 0 0 18px #00eaff;
+            border-bottom: 1px solid #00eaff44;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 85%;
+            margin: 60px auto;
+            gap: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.9s ease-out;
+        }
+        .section.show {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        .text-box {
+            flex: 1;
+            background: #111827;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px #00eaff44;
+            border: 1px solid #00eaff55;
+        }
+
+        .text-box h2 {
+            color: #00eaff;
+            text-shadow: 0 0 12px #00eaff;
+        }
+        .text-box p {
+            color: #e8e8e8;
+            line-height: 1.7;
+        }
+
+        .image-box {
+            flex: 1;
+        }
+        .image-box img {
+            width: 100%;
+            border-radius: 18px;
+            border: 2px solid #00eaff55;
+            box-shadow: 0 0 20px #00eaff55;
+        }
+
+        .reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* NEW SIDE IMAGE SECTIONS */
+        .side-image {
+            width: 250px;
+            border-radius: 18px;
+            border: 2px solid #00eaff33;
+            box-shadow: 0 0 15px #00eaff33;
+            margin: 10px 0;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #0a66c2;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 18px #0a66c2;
+            animation: float 2s infinite ease-in-out;
+            transition: 0.3s;
+            z-index: 999;
+        }
+        .floating-btn img {
+            width: 35px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Line Follower Robot Project – Shubham Singh (BBDNIIT)
+</header>
+
+<!-- HACKER ANIMATION INTRO SECTION -->
+<div id="hacker-intro" style="position:fixed; inset:0; background:black; display:flex; align-items:center; justify-content:center; z-index:9999; flex-direction:column; font-family:monospace; color:#00ff9d; font-size:22px;">
+    <div id="hack-text">Initializing system...</div>
+</div>
+
+<script>
+let lines = [
+    "Booting robotic interface...",
+    "Loading AI motor control...",
+    "Activating IR sensor modules...",
+    "Establishing line tracking system...",
+    "Access Granted ✔",
+    "Welcome to Line Follower Robot"
+];
+let index = 0;
+const hackBox = document.getElementById('hack-text');
+
+function showNextLine() {
+    if (index < lines.length) {
+        hackBox.innerText = lines[index];
+        index++;
+        setTimeout(showNextLine, 700);
+    } else {
+        document.getElementById('hacker-intro').style.transition = '1s';
+        document.getElementById('hacker-intro').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('hacker-intro').style.display = 'none';
+        }, 1200);
+    }
+}
+setTimeout(showNextLine, 800);
+</script>
+
+<!-- SECTION WITH EXTRA IMAGES -->
+<div class="section">
+    <div class="text-box">
+        <h2>Line Follower Robot – Concept Overview</h2>
+        <p>
+            A Line Follower Robot works on the principle of detecting a path and adjusting its direction
+            accordingly using IR sensors. It is one of the best beginner robotics projects.
+            A line follower robot is an autonomous robot designed to follow a pre-defined path or line on the ground, typically a black line on a white surface or vice versa. It uses IR sensors to detect the line by sensing the reflection of light, and an Arduino UNO acts as the brain, processing these sensor signals to determine the robot’s movement. Based on the sensor input, the Arduino sends commands to a motor driver, which powers the motors to move the robot forward, turn left, or turn right, keeping it on the path. Line follower robots are widely used in educational projects, automated guided vehicles (AGVs), warehouses, and industrial applications.
+        </p>
+
+        <!-- EXTRA IMAGES LEFT -->
+        <img class="side-image" src="https://hackster.imgix.net/uploads/attachments/1049591/_yYzNRv1GW8.blob?auto=compress&w=900&h=675&fit=min&fm=jpg" />
+        <img class="side-image" src="image/4.JPG" />
+    </div>
+
+    <div class="image-box">
+        <img src="image/1.JPG" alt="Robot" />
+    </div>
+</div>
+
+<!-- SECTION WITH RIGHT SIDE IMAGES -->
+<div class="section reverse">
+    <div class="text-box">
+        <h2>How Infrared Sensors Work</h2>
+        <p>
+            IR sensors detect contrast between black and white surfaces. The black line absorbs infrared
+            light while white reflects, helping the robot stay on track.
+            Sensors (IR sensors): Detect the line on the surface by sensing light reflection (white) or absorption (black). They tell the robot where the line is.
+
+            Arduino UNO: Acts as the brain. It reads the sensor signals and decides how the motors should move (forward, left, right) to follow the line.
+        </p>
+    </div>
+
+    <div class="image-box">
+        <img src="image/2.JPG" alt="Sensors" />
+        <img class="side-image" src="https://i.sstatic.net/Pgokk.png" />
+        <img class="side-image" src="https://www.theengineerstore.in/cdn/shop/products/arduino-uno-r3-1.png?v=1701086206" />
+    </div>
+</div>
+
+<!-- BUILD PROCESS WITH EXTRA IMAGES -->
+<div class="section">
+    <div class="text-box">
+        <h2>Robot Assembly</h2>
+        <p>
+            The robot requires chassis mounting, motor installation, sensor placement, and Arduino
+            programming. Each component must be aligned properly for smooth movement.
+            Mount Components: Fix motors, wheels, Arduino UNO, and motor driver on the chassis.
+            Place Sensors: Attach 3 IR sensors (left, center, right) at the front, near the ground.
+            Wiring: Connect sensors to Arduino, Arduino to motor driver, motor driver to motors, battery to power everything.
+            Program Arduino: Read sensor values and control motors to follow the line (left, right, forward).
+            Test & Adjust: Place on line, test movement, fine-tune sensor position and code.
+            
+        </p>
+        <img class="side-image" src="" />
+        <img class="side-image" src="https://circuitdigest.com/sites/default/files/circuitdiagram_mic/Line-Follower-Circuit-Diagram.png" />
+    </div>
+
+    <div class="image-box">
+        <img src="image/3.JPG" alt="Build" />
+    </div>
+</div>
+
+<!-- ABOUT ME WITH EXTRA IMAGES -->
+<div class="section reverse">
+    <div class="text-box">
+        <h2>About Myself – Shubham Singh</h2>
+        <p>
+           Hey my self SHUBHAM SINGH, i m pursuing in B-tech(2nd year). 
+           I am passionate about robotics, automation, and embedded systems. This project helped enhance
+            my understanding of real-world robotics. this project made by my entier team with the help of our technical team of BBDNIIT.
+        </p>
+        <img class="side-image" src="image/s5.jpg" />
+    </div>
+
+    <div class="image-box">
+        <img src="image/s2.jpeg" />
+    </div>
+</div>
+
+
+<!-- FLOATING BUTTON -->
+<a href="https://www.linkedin.com/in/shubham-singh-b6a586307/" class="floating-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/960px-LinkedIn_logo_initials.png" />
+</a>
+
+<script>
+    const sections = document.querySelectorAll('.section');
+
+    const revealOnScroll = () => {
+        sections.forEach(sec => {
+            const top = sec.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) sec.classList.add('show');
+        });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+</script>
+
+</body>
+</html>
