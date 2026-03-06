@@ -538,7 +538,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 **Shubham Singh**
-- LinkedIn: [Shubham Singh](https://www.linkedin.com/in/shubham-singh-b6a586307/)
+- LinkedIn: [Shubham Singh](https://www.linkedin.com/in/shubham-singh-1a235a394/)
 - Institution: BBDNIIT
 - Year: 2nd Year B.Tech
 
