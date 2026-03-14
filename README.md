@@ -6,7 +6,7 @@
 
 > An autonomous line-following robot built with Arduino UNO and IR sensors, designed to navigate along a predefined path using real-time sensor feedback and motor control algorithms.
 
-**Created by:** Shubham Singh (BBDNIIT) | [LinkedIn](https://www.linkedin.com/in/shubham-singh-b6a586307/)
+**Created by:** Shubham Singh (BBDNIIT) | [LinkedIn](https://www.linkedin.com/in/shubham-singh-1a235a394/)
 
 ---
 
